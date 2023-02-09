@@ -1,6 +1,7 @@
 // v0.2.0
 
 PImage img;
+PImage trash;
 
 int state = 0;
 
@@ -25,14 +26,16 @@ void setup() {
   size(1927, 1080);
   background(50);
 
-  println("v0.1.3");
-  println("Nano OS");
+  println("Nano OS - v0.2.0");
   println("A project by CaptainCoder and MTN73");
 
-  img = loadImage("Background_3.jpg");
+  img = loadImage("background_4.png");
+  trash = loadImage("trash.png");
+  trash.resize(50,50);
   
   ballX = 700; //sets the default ball position to be in the center of the screen
   ballY = 400; //
+  
 }
 
 void draw() {
@@ -88,6 +91,7 @@ void draw() {
     text("CLOCK", column1+55, row2+110);
     text("APP STORE", column2+40, row2+110);
     text("NOTEPAD", column3+40, row2+110);
+    
   }
   if (state==1) {
 
@@ -407,3 +411,15 @@ boolean scaledIf(int Ylow, int Yhigh, int Xlow, int Xhigh) { //method to see if 
  unscaledmouseX = mouseX * (originalwidth/width);
  unscaledmouseY = mouseY * (originalHeight/height);
  }*/
+
+ 
+ boolean buttonV2(int x, int y, int wdth, int hgt, String text){
+   
+   fill(#FFFFFF);
+   rect(x,y,wdth,hgt);
+   stroke(#000000);
+   text(text,x,y,20);
+   
+   return true;
+   
+ }

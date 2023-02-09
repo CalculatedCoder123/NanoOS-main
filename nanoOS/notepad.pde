@@ -12,6 +12,8 @@ PrintWriter output;
 
 void notepad() {
 
+  /*
+  
   background(50);
   fill(#FFFFFF);
   textSize(32);
@@ -28,14 +30,17 @@ void notepad() {
     }
     
     else{
-    scaledTextS("There are " + notes.length + " notes",100,200,60);
+    scaledTextS("There are " + notes.length + " notes",200,200,60);
     
     for(int i = 0;i<notes.length;i++){
       
-     scaledTextS(notes[i],100,300+i*100,30); 
+     scaledTextS(notes[i],100,300+i*100,30);
+     image(trash, 250, 360+i*100);
+     
       
     }
     }
+    
     fill(#000000);
     rect(1200,500,200,100,30);
     fill(#FFFFFF);
@@ -63,9 +68,11 @@ void notepad() {
   }
   else if(noteState == 2){
     
-    
-   //note writing screen
+   if(typing.length() == 0){
+   
    scaledTextS("Start Typing",500,500,50);
+   
+   }
    fill(40,40,40);
    scaledRect(150,100,800,300,20);
    stroke(#FFFFFF);
@@ -77,10 +84,17 @@ void notepad() {
       typing = typing + key;
       newInput = false;
     }
+    
+    println(typing);
    //save button
    //append to .txt
     
   }
-
+  */
+  
+  background(50);
+  fill(#FFFFFF);
+  textSize(32);
+  text("Coming in v.0.2.1", 800, 450);
   exitButton();
 }
